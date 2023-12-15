@@ -33,6 +33,3 @@ Cypress.Commands.add('login', (email, password) => {
     }
     cy.contains('Submit').click()
 })
-Cypress.Commands.add('setViewportSize', (width, height) => {
-    cy.viewport(width, height);
-  });

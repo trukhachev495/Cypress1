@@ -35,7 +35,8 @@ describe('main Functionality', () => {
       // expect(elements[0].validationMessage).to.be.eql('Заполните это поле.')
     })
   })
-
+})
+describe('Working with book functionality', () => {
   it('add book', () => {
     cy.login('bropet@mail.ru', '123')
     cy.contains('Add new').click()
@@ -57,4 +58,14 @@ describe('main Functionality', () => {
     cy.contains('Война и мир').should('be.visible')
 
    })
+  it('removing a book from favorites', () => {
+    cy.login('bropet@mail.ru', '123')
+    cy.get('#root > div > div > div > a:nth-child(1) > div > div.card-footer > button').click()
+    cy.contains('Favorites').click()
+    cy.contains('Война и мир').should('be.visible')
+    cy.contains('Delete from favorite').click()
+    cy.contains('Please add some book to favorit on home page!').should('be.visible')
+    cy.contains('Война и мир').should('not.exist')
+
+  })
 })

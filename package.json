@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "testOpen:laptop": "cross-env CYPRESS_viewportWidth=1366 CYPRESS_viewportHeight=768 npx cypress open",
-    "testOpen:mobile": "cross-env CYPRESS_viewportWidth=375 CYPRESS_viewportHeight=667 npx cypress open",
+    "test:laptop": "npx cypress run --browser chrome --headed --config-file cypresslaptop.env.js",
+    "test:mobile": "npx cypress run --browser chrome --headed --config-file cypressmobile.env.js",
     "testHeaded:chrome": "npx cypress run --headed --browser chrome",
     "testHeaded:firefox": "npx cypress run --headed --browser firefox",
     "testHeadless:chrome":"npx cypress run --headless --browser chrome",
