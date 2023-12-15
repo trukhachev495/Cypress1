@@ -2,7 +2,7 @@ beforeEach(() => {
   cy.visit('/')
 })
 
-describe('main Functionality', () => {
+describe('Authorization', () => {
   it('registration valid email and password', () => {
     cy.login('bropet@mail.ru', '123')
     cy.contains('Добро пожаловать bropet@mail.ru').should('be.visible')
